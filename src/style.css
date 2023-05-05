@@ -1,0 +1,193 @@
+:root {
+  --ff-base: 'Inter var experimental', 'Inter var', Inter, -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --clr-light-bg: #ffffff;
+  --clr-light-bg-secondary: #f1f1f1;
+  --clr-light-outline: #3c3c3c4a;
+  --clr-light-highlight: #8e8e8e;
+  --clr-light-text: #213547;
+  --clr-light-text-2: #3c3c3cb3;
+  --clr-dark-bg: #1a1a1a;
+  --clr-dark-bg-secondary: #2f2f2f;
+  --clr-dark-outline: #545454a6;
+  --clr-dark-highlight: #8e8e8e;
+  --clr-dark-text: #ffffffde;
+  --clr-primary: #e76048;
+  --clr-primary-highlight: #d63b37;
+}
+
+/* Base styles */
+body {
+  font-family: var(--ff-base);
+  text-align: center;
+  letter-spacing: 0.4px;
+  line-height: 24px;
+  margin: 8px auto;
+  max-width: 30%;
+  background-color: var(--clr-light-bg);
+  color: var(--clr-light-text);
+  transition: background-color 0.2s, color 0.2s;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h2,
+h3 {
+  margin: 8px auto;
+}
+
+/* Dark mode */
+.dark body {
+  background-color: var(--clr-dark-bg);
+  color: var(--clr-dark-text);
+}
+
+.form-selection {
+  margin: 24px auto;
+}
+
+.form-input {
+  width: 100%;
+  height: 32px;
+  padding-left: 8px;
+  border-radius: 8px;
+  border: none;
+  box-sizing: border-box;
+  overflow: hidden;
+  cursor: pointer;
+  color: var(--clr-light-text);
+  background-color: var(--clr-light-bg-secondary);
+}
+
+.form-label {
+  display: flex;
+  flex-direction: column;
+}
+
+.macros-toggle {
+  margin: 8px auto;
+  position: relative;
+  padding: 8px;
+  color: var(--clr-dark-text);
+  background-color: var(--clr-primary);
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  outline: 0;
+  overflow: hidden;
+  cursor: pointer;
+  appearance: none;
+  transition: border-color 0.25s, background-color 0.25s;
+}
+
+.macros-toggle:hover {
+  background-color: var(--clr-primary-highlight);
+}
+
+/* Mode toggle */
+.mode-toggle {
+  position: relative;
+  padding: 0;
+  width: 44px;
+  height: 24px;
+  min-width: 36px;
+  min-height: 20px;
+  background-color: var(--clr-light-bg-secondary);
+  border: 1px solid var(--clr-light-outline);
+  border-radius: 24px;
+  outline: 0;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 2;
+  appearance: none;
+  transition: border-color 0.25s, background-color 0.25s;
+}
+
+.mode-toggle:hover {
+  border-color: var(--clr-light-highlight);
+}
+
+.mode-toggle .toggle {
+  position: absolute;
+  top: 0;
+  left: 1px;
+  bottom: 0;
+  margin: auto;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  overflow: hidden;
+  color: black;
+  transition: transform 0.25s, background-color 0.25s;
+  background-color: var(--clr-light-bg);
+}
+
+.mode-toggle .toggle #dark-mode {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  color: white;
+}
+
+.mode-toggle .toggle .switch-moon {
+  display: none;
+}
+
+.mode-toggle .toggle .switch-sun {
+  display: block;
+  fill: var(--clr-light-text-2);
+  width: 12px;
+  height: 12px;
+  top: 4px;
+  left: 4px;
+  position: absolute;
+}
+
+/* Dark mode - mode toggle */
+.dark .mode-toggle {
+  background-color: var(--clr-dark-bg-secondary);
+  border-color: var(--clr-dark-outline);
+}
+
+.dark .mode-toggle:hover {
+  border-color: var(--clr-dark-highlight);
+}
+
+.dark .mode-toggle .toggle {
+  transform: translateX(19px);
+  background-color: var(--clr-dark-bg);
+}
+
+.dark .mode-toggle .toggle #dark-mode:before {
+  border-radius: 50%;
+  width: 150%;
+  height: 85%;
+  left: 40%;
+  transform: translate(-10%, -40%) rotate(-35deg);
+}
+
+.dark .mode-toggle .toggle .switch-moon {
+  fill: var(--clr-dark-text);
+  display: block;
+  width: 12px;
+  height: 12px;
+  top: 4px;
+  left: 4px;
+  position: absolute;
+}
+
+.dark .mode-toggle .toggle .switch-sun {
+  display: none;
+}
+
+.dark .form-input {
+  background-color: var(--clr-dark-bg-secondary);
+  color: var(--clr-dark-text);
+}
